@@ -128,7 +128,7 @@ class Chosen extends AbstractChosen
 
       if not (evt? and ($ evt.target).hasClass "search-choice-close")
         if not @active_field
-          @search_field.val "" if @is_multiple
+          # @search_field.val "" if @is_multiple # 去除输入框中的值
           $(@container[0].ownerDocument).bind 'click.chosen', @click_test_action
           this.results_show()
         else if not @is_multiple and evt and (($(evt.target)[0] == @selected_item[0]) || $(evt.target).parents("a.chosen-single").length)
